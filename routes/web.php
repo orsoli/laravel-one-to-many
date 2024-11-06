@@ -23,5 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/projects/index', [ProjectController::class, 'index'])->name('project.index');
-Route::get('/types/index', [TypeController::class, 'index'])->name('type.index');
+
+
+Route::get('/projects/index', [ProjectController::class, 'index'])->name('project.index')->middleware('auth');
+Route::get('/types/index', [TypeController::class, 'index'])->name('type.index')->middleware('auth');
