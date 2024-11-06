@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/projects/index', [ProjectController::class, 'index'])->name('project.index');
+Route::get('/types/index', [TypeController::class, 'index'])->name('type.index');
