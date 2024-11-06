@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('type_id')->constrained();
+            $table->string('name',255);
+            $table->text('description');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('project_manager');
             $table->timestamps();
         });
     }
